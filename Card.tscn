@@ -1,0 +1,41 @@
+[gd_scene load_steps=2 format=3 uid="uid://b3uyyfffkefay"]
+
+[ext_resource type="Script" path="res://src/ui/Card.gd" id="2"]
+
+[node name="Card" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 220.0
+offset_bottom = 50.0
+script = ExtResource("2")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+offset_right = 62.0
+offset_bottom = 26.0
+text = "Player 1"
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -10.0
+offset_right = 15.0
+offset_bottom = 25.0
+grow_horizontal = 2
+
+[node name="OptionButton" type="OptionButton" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -14.0
+offset_bottom = 20.0
+grow_horizontal = 0
+item_count = 2
+selected = 0
+popup/item_0/text = "white"
+popup/item_0/id = 0
+popup/item_1/text = "black"
+popup/item_1/id = 1

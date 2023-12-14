@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://6erbnbdsx8uw"]
+
+[ext_resource type="TileSet" uid="uid://ckdth2elcqfyc" path="res://pieces.tres" id="1"]
+[ext_resource type="Script" path="res://src/Tablero.gd" id="2"]
+
+[node name="Tablero" type="TileMap"]
+tile_set = ExtResource("1")
+format = 2
+script = ExtResource("2")

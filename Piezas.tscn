@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://b12ulmco0b0vk"]
+
+[ext_resource type="TileSet" uid="uid://ckdth2elcqfyc" path="res://pieces.tres" id="1"]
+[ext_resource type="Script" path="res://src/Piezas.gd" id="2"]
+[ext_resource type="PackedScene" uid="uid://blk24qvoilbxq" path="res://Corona.tscn" id="3"]
+
+[node name="Piezas" type="TileMap"]
+tile_set = ExtResource("1")
+format = 2
+script = ExtResource("2")
+
+[node name="Corona" parent="." instance=ExtResource("3")]
+
+[node name="PopupMenu" type="PopupMenu" parent="."]
+position = Vector2i(100, 100)
+hide_on_checkable_item_selection = false
+allow_search = false
+item_count = 2
+item_0/text = "main manu"
+item_0/id = 0
+item_1/text = "return"
+item_1/id = 1

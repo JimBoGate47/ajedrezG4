@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://blk24qvoilbxq"]
+
+[ext_resource type="TileSet" uid="uid://ckdth2elcqfyc" path="res://pieces.tres" id="1"]
+[ext_resource type="Script" path="res://src/Corona.gd" id="2"]
+
+[node name="Corona" type="TileMap"]
+tile_set = ExtResource("1")
+format = 2
+script = ExtResource("2")
+playerColor = 1
