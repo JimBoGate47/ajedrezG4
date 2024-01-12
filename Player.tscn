@@ -1,0 +1,39 @@
+[gd_scene load_steps=10 format=3 uid="uid://dqnl5xfdd6jql"]
+
+[ext_resource type="Script" path="res://src/Player.gd" id="1_x0bn8"]
+[ext_resource type="Script" path="res://src/StateMachine.gd" id="2_g1ank"]
+[ext_resource type="PackedScene" uid="uid://coo6388qn7pjc" path="res://UI.tscn" id="2_ulfpj"]
+[ext_resource type="PackedScene" uid="uid://6erbnbdsx8uw" path="res://Tablero.tscn" id="2_w0pq1"]
+[ext_resource type="PackedScene" uid="uid://b12ulmco0b0vk" path="res://Piezas.tscn" id="3_l7dus"]
+[ext_resource type="Script" path="res://src/states/MenuState.gd" id="4_lfyjf"]
+[ext_resource type="PackedScene" uid="uid://6jdsg0q6jnwl" path="res://Lobby.tscn" id="4_qnydt"]
+[ext_resource type="Script" path="res://src/states/GameState.gd" id="5_lkons"]
+[ext_resource type="Script" path="res://src/states/LobbyState.gd" id="7_5bsyf"]
+
+[node name="Player" type="Node2D"]
+script = ExtResource("1_x0bn8")
+
+[node name="Tablero" parent="." instance=ExtResource("2_w0pq1")]
+visible = false
+
+[node name="Piezas" parent="." instance=ExtResource("3_l7dus")]
+visible = false
+
+[node name="UI" parent="." instance=ExtResource("2_ulfpj")]
+visible = false
+
+[node name="Lobby" parent="." instance=ExtResource("4_qnydt")]
+visible = false
+
+[node name="StateMachine" type="Node" parent="."]
+script = ExtResource("2_g1ank")
+initial_state = NodePath("MenuState")
+
+[node name="MenuState" type="Node" parent="StateMachine"]
+script = ExtResource("4_lfyjf")
+
+[node name="GameState" type="Node" parent="StateMachine"]
+script = ExtResource("5_lkons")
+
+[node name="LobbyState" type="Node" parent="StateMachine"]
+script = ExtResource("7_5bsyf")

@@ -1,13 +1,15 @@
 extends CanvasLayer
 
-signal create_server(name)
-signal join_server(name, ip)
+signal create_server(conn_data)
+signal join_server(conn_data)
 
 var button1
 var button2
 var textEdit
 var textName
-var ip_address = "0.0.0.0"
+
+var _connection_data = {port=8000, address='0.0.0.0', max_connections=4, p_name='poser'}
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	button1 = $Button1
@@ -22,12 +24,15 @@ func _ready():
 
 
 func _on_create_server():
-	print("Serving ", textName.get_text())
-	create_server.emit(textName.get_text())
+	_connection_data.p_name = textName.get_text()
+	print("UI: Serving ", _connection_data)
+	create_server.emit(_connection_data)
 
 func _on_join_server():
-	print("Joinning ", textName.get_text())
-	join_server.emit(textName.get_text(), textEdit.get_text())
+	print("UI: Joinning ", _connection_data)
+	_connection_data.p_name = textName.get_text()
+	_connection_data.address = textEdit.get_text()
+	join_server.emit(_connection_data)
 
 func _on_text_name_changed():
 	var text = textName.get_text()

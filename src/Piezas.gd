@@ -33,8 +33,8 @@ func _ready():
 	popup.popup_hide.connect(_on_popup_hide)
 	
 	# just for testing:
-	draw_pieces()
-	enable()
+	#draw_pieces()
+	#enable()
 
 func set_player_data(id):
 	playerColor = id
