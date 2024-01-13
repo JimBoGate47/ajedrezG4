@@ -2,6 +2,7 @@
 **/*.txt
 addons/
 .vscode
+.godot/
 
 
 
